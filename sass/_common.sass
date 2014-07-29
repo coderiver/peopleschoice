@@ -93,7 +93,61 @@ $cl: #572861
 		max-width: 1245px 
 		margin: 0 auto
 		background: #ececec 
-
+	&.wrapper_mobile
+		min-width: 320px
+		.awards
+			padding: 15px
+		.categories
+			padding: 9px 7px 40px 
+		.categories__list
+			margin-bottom: 16px
+		.categories__list-in
+			margin: 0
+		.categories__el
+			width: 100%
+		.categories__item
+			margin: 0 0 4px
+			+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%))
+			&:hover
+				box-shadow: none
+				&:after
+					display: none
+			&:active, &.is-active
+				&:after
+					display: block 
+					+s(categories-item-bg-small)
+		.categories__in
+			height: 46px
+			padding: 0 10px
+		.categories__icon
+			padding-right: 10px
+		.categories__icon-camera
+			+s(categories-ico-camera-small)
+		.categories__icon-tv
+			+s(categories-ico-tv-small)
+		.categories__icon-sound
+			+s(categories-ico-sound-small)
+		.categories__type 
+			font-size: 12px
+		.categories__votes-form
+			display: block
+			margin-bottom: 18px
+		.categories__votes-label
+			margin-bottom: 10px
+			font-size: 12px
+			text-align: center
+		.categories__votes-area
+			padding: 12px
+			font-size: 13px
+			text-align: center
+		.categories__votes-btn
+			float: none
+			width: 100%
+			margin: 0
+			+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%))
+			&:hover
+				box-shadow: none
+		
 .awards
 	padding: 25px 30px
 	+g(#6c3079, #572861)
@@ -104,6 +158,12 @@ $cl: #572861
 		padding: 20px 15px
 	.awards__title
 		+s(awards)
+	.awards__new
+		text-align: center
+		text-transform: uppercase
+		color: #FFF
+		+fb
+		font-size: 16px 
 
 .categories
 	padding: 45px 30px
@@ -261,6 +321,8 @@ $cl: #572861
 		text-transform: uppercase
 		color: $cl 
 		outline: none
+		text-overflow: ellipsis
+		overflow: hidden
 	.categories__footer
 		margin-top: 70px
 		+clr
@@ -407,9 +469,106 @@ $cl: #572861
 		text-overflow: ellipsis
 		overflow: hidden
 
-
-
-
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	overflow: auto
+	+f
+	+vertical
+	.popup__in
+		position: relative
+		display: inline-block
+		width: 660px
+		background: #fff 
+		vertical-align: middle
+		z-index: 4 
+	.popup__head
+		position: relative
+		+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%))
+	.popup__close
+		position: absolute
+		top: 13px
+		right: 13px
+		+s(popup-close)
+	.popup__title
+		padding: 18px
+		text-align: center
+		color: #FFF
+		+fb
+		font-size: 36px
+	.popup__container
+		padding: 25px 40px 40px
+		& + .popup__container
+			border-top: 1px solid #d9d9d9   
+	.popup__text
+		margin-bottom: 25px
+		font-size: 18px
+	.popup__social
+		margin-bottom: 35px
+	.popup__title-small
+		margin-bottom: 20px
+		text-transform: uppercase
+		+fb
+		font-size: 18px
+		color: $cl 
+	.popup__blogs
+		font-size: 0
+	.popup__blogs-item	
+		display: inline-block
+		width: 50%
+		padding: 0 5px
+		box-sizing: border-box
+		vertical-align: top
+	.popup__blogs-link
+		display: block
+		background: $cl
+		border-radius: 7px
+		&:hover
+			+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%))
+	.popup__blogs-title
+		display: inline-block
+		vertical-align: top
+		span
+			display: table-cell
+			height: 118px 
+			text-transform: uppercase
+			color: #FFF
+			+fb
+			font-size: 14px  
+			vertical-align: middle
+	.popup__presented
+		margin-bottom: 15px
+	.popup__presented-title
+		margin-bottom: 15px
+		font-size: 12px
+	.popup__presented-logo
+		display: inline-block
+		+s(popup-presented)
+		vertical-align: top
+	.popup__enter
+		button
+			width: 330px
+			height: 60px
+			background: $cl
+			border-radius: 7px  
+			text-transform: uppercase
+			color: #FFF
+			+fb
+			font-size: 18px  
+			&:hover
+				+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%)) 
+	.popup__bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: #000
+		z-index: 2 
+		+opacity(.8) 
 
 
 
