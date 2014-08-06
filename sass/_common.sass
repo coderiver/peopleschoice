@@ -63,7 +63,9 @@ $cl: #572861
 	.awards
 		padding: 20px
 	.categories
-		padding: 25px 20px
+		padding: 25px 15px
+		.categories__head
+			padding: 17px
 		.categories__list
 			margin-bottom: 20px
 		.categories__in
@@ -74,10 +76,93 @@ $cl: #572861
 			padding-left: 15px 
 		.categories__footer
 			display: none
+		.categories__title-in
+			font-size: 26px
+		.categories__nav
+			margin: 20px 0 30px
+		.categories__genre-nav
+			button
+				width: 205px
+				height: 45px
+				border-width: 6px
+				&:after
+					margin-top: -6px
+					+s(categories-genre-plus-small)
+				&.is-active 
+					&:after
+						+sp(categories-genre-minus-small)
+			i
+				top: 0
+			span
+				font-size: 14px
+		.categories__genre-movies
+			i
+				+s(categories-genre-movies-small)
+			&.is-active
+				i
+					+sp(categories-genre-movies-a-small)
+		.categories__genre-tv
+			i
+				top: -2px
+				+s(categories-genre-tv-small)
+			&.is-active
+				i
+					+sp(categories-genre-tv-a-small)
+		.categories__genre-music
+			i
+				+s(categories-genre-music-small)
+			&.is-active
+				i
+					+sp(categories-genre-music-a-small)
+		.categories__genre-list
+			padding: 20px 30px
+			a
+				padding: 7px 0
+				font-size: 14px
+		.categories__fav-share
+			padding: 0 10px 10px
+			.categories__share
+				text-align: center
+			.categories__share-title
+				display: block
+				margin-bottom: 7px
+				font-size: 12px
+			.categories__cell_presented
+				padding-left: 10px
+		.categories__fav-type
+			padding: 100px 10px 0 35px
+			li
+				font-size: 28px 
+				&:first-child
+					padding-right: 10px
+			img
+				width: 24px
+		.categories__genre-sort
+			margin-bottom: 15px
+			button
+				margin: 0 6px
+				padding: 5px 15px
+				font-size: 12px 
 	.posts
 		padding: 25px 20px
 		.posts__text
 			font-size: 20px
+	.vote-head
+		padding: 20px
+	.vote-account
+		.vote-account__ava
+			+r(1245)
+				float: left
+		.vote-account__name
+			display: block
+			margin: 0 0 5px
+			overflow: hidden
+		.vote-account__invite
+			padding: 5px 15px
+	.vote-friends
+		.vote-friends__title	
+			width: 120px
+			text-align: right
 
 // common blocks      
 .wrapper
@@ -96,16 +181,36 @@ $cl: #572861
 	&.wrapper_mobile
 		min-width: 320px
 		.awards
-			padding: 15px
+			padding: 15px 10px
 		.categories
-			padding: 9px 7px 40px 
+			padding: 9px 7px 20px 
+		.categories__head
+			padding: 10px
+		.categories__title-ico
+			margin-right: 10px
+		.categories__title-in
+			font-size: 18px
+		.categories__title-text
+			font-size: 14px
 		.categories__list
 			margin-bottom: 16px
+		.categories__list_people
+			.categories__list-in
+				margin: 0 -4px -4px 0 
+			.categories__el
+				width: 50%
+				text-align: left
+			.categories__item
+				margin: 0 4px 4px 0
+		.categories__people, .categories__work
+			font-size: 12px
+			line-height: 1
 		.categories__list-in
 			margin: 0
 		.categories__el
 			width: 100%
 		.categories__item
+			height: 46px
 			margin: 0 0 4px
 			+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%))
 			&:hover
@@ -117,7 +222,6 @@ $cl: #572861
 					display: block 
 					+s(categories-item-bg-small)
 		.categories__in
-			height: 46px
 			padding: 0 10px
 		.categories__icon
 			padding-right: 10px
@@ -131,12 +235,13 @@ $cl: #572861
 			font-size: 12px
 		.categories__votes-form
 			display: block
-			margin-bottom: 18px
+			margin-bottom: 7px
 		.categories__votes-label
 			margin-bottom: 10px
 			font-size: 12px
 			text-align: center
 		.categories__votes-area
+			max-width: 100%
 			padding: 12px
 			font-size: 13px
 			text-align: center
@@ -147,17 +252,40 @@ $cl: #572861
 			+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%))
 			&:hover
 				box-shadow: none
+		.categories__nav
+			margin: 7px 0 25px
+			button
+				float: left
+				width: 49.5%
+				height: 40px
+				font-size: 11px
+				line-height: 1
+				&:first-child
+					margin-right: 1%
+		.categories__nav-prev
+			text-align: left
+		.categories__genre
+			margin-top: 15px
+		.categories__fav
+			margin-bottom: 10px
+		.categories__fav-item
+			width: 50%
+		.categories__fav-title
+			padding: 5px
+			font-size: 10px
+		.categories__fav-type
+			padding: 55px 20px 0 20px
+			li
+				font-size: 16px
+			img
+				width: 14px
 		
 .awards
 	padding: 25px 30px
 	+g(#6c3079, #572861)
 	font-size: 0
 	+r(1245)
-		padding: 20px
-	+r(810)
 		padding: 20px 15px
-	.awards__title
-		+s(awards)
 	.awards__new
 		text-align: center
 		text-transform: uppercase
@@ -170,8 +298,6 @@ $cl: #572861
 	background: url(../img/bg.jpg) no-repeat 50% 50% 
 	background-size: cover  
 	+r(1245)
-		padding: 25px 20px
-	+r(810)
 		padding: 25px 15px
 	.categories__head
 		display: table
@@ -181,6 +307,8 @@ $cl: #572861
 		background: #FFF
 		border-radius: 6px 
 		box-sizing: border-box
+		+r(1245)
+			padding: 17px
 	.categories__row
 		display: table-row
 	.categories__cell
@@ -189,13 +317,12 @@ $cl: #572861
 	.categories__cell_presented
 		width: 103px 
 		padding-left: 30px
+		font-size: 0
 		+r(1245)
 			padding-left: 15px 
 	.categories__cell_share
-		padding-left: 30px
+		padding-left: 15px
 		text-align: right
-	.categories__presented
-		+s(cocacola)
 	.categories__share	
 		white-space: nowrap
 	.categories__share,
@@ -214,20 +341,40 @@ $cl: #572861
 			color: #000 
 	.categories__title
 		display: table
+	.categories__title-ico
+		float: left
+		margin-right: 20px 
+	.categories__title-wrap
+		display: table
 	.categories__title-in
 		+fb
 		font-size: 40px
 		text-transform: uppercase
 		color: $cl 
 		line-height: 1
+		+r(1245)
+			font-size: 26px
 	.categories__title-text
 		font-size: 18px
 		line-height: 1
+		span
+			+fb
 	.categories__list
 		margin-bottom: 40px
 		overflow: hidden
 		+r(1245)
 			margin-bottom: 20px
+	.categories__list_people	
+		.categories__el
+			width: 25%
+			text-align: center
+	.categories__people, .categories__work
+		display: block
+		font-size: 15px
+		color: #FFF 
+		text-transform: uppercase
+	.categories__people
+		+fb
 	.categories__list-in
 		margin: 0 -4px -4px 0
 		font-size: 0
@@ -237,12 +384,14 @@ $cl: #572861
 	.categories__item
 		position: relative
 		display: block
+		height: 110px
 		margin: 0 4px 4px 0
 		background: $cl 
 		border-radius: 6px 
 		vertical-align: top
 		overflow: hidden
-		&:hover
+		+vertical
+		&:hover, &.is-active
 			box-shadow: inset 4px 7px 16px rgba(0,0,0,.35)
 			+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%))
 			&:after
@@ -251,7 +400,7 @@ $cl: #572861
 				top: 1px
 				right: -1px
 				+s(categories-item-bg)
-		&:active
+		&:active, &.is-active
 			box-shadow: none
 	.categories__item_blue
 		&:active, &.is-active
@@ -263,8 +412,7 @@ $cl: #572861
 		&:active, &.is-active
 			+background-image(linear-gradient(bottom, #f69036 0%, #f1bf4c 100%))
 	.categories__in
-		display: table-cell
-		height: 110px
+		display: inline-block
 		padding: 0 35px
 		vertical-align: middle 
 		+r(1245)
@@ -294,7 +442,7 @@ $cl: #572861
 	.categories__votes
 		+clr
 	.categories__votes-form
-		display: table
+		overflow: hidden
 	.categories__votes-btn
 		float: right
 		width: 330px
@@ -313,6 +461,7 @@ $cl: #572861
 		display: block
 		margin-bottom: 15px
 	.categories__votes-area
+		max-width: 540px
 		padding: 15px 20px
 		box-shadow: inset 2px 1px 6px rgba(0,0,0,.46)
 		background: #FFF 
@@ -323,6 +472,41 @@ $cl: #572861
 		outline: none
 		text-overflow: ellipsis
 		overflow: hidden
+	.categories__nav
+		margin: 25px 0 -30px
+		+clr
+		+r(1245)
+			margin: 20px 0 30px
+		button
+			position: relative
+			width: 236px
+			height: 38px
+			border-radius: 5px 
+			background: $cl 
+			+roboto
+			font-size: 15px
+			color: #FFF 
+			overflow: visible
+			i
+				position: absolute
+				top: 50%
+				margin-top: -7px
+			&:hover
+				+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%)) 
+	.categories__nav-prev
+		float: left
+		padding: 5px 20px 5px 35px
+		text-align: right
+		i
+			left: 11px
+			+s(categories-nav-prev)
+	.categories__nav-next
+		float: right
+		padding: 5px 35px 5px 20px
+		text-align: left
+		i
+			right: 11px
+			+s(categories-nav-next)
 	.categories__footer
 		margin-top: 70px
 		+clr
@@ -342,12 +526,305 @@ $cl: #572861
 	.categories__back-title-big
 		+fb
 		font-size: 34px 
+	.categories__genre
+		margin-top: 35px
+	.categories__genre-nav
+		text-align: center
+		font-size: 0
+		button
+			position: relative
+			width: 280px
+			height: 62px 
+			padding: 0 45px 0 20px
+			margin-left: 14px
+			background: #7f7f7f 
+			text-align: left
+			overflow: visible
+			+r(1245)
+				width: 205px
+				height: 45px
+				border-width: 6px
+			&:after
+				content: ""
+				position: absolute
+				top: 50%
+				right: 10px
+				margin-top: -10px
+				+s(categories-genre-plus)
+				+r(1245)
+					margin-top: -6px
+					+s(categories-genre-plus-small)
+			&.is-active
+				background: #fff 
+				cursor: default
+				&:after
+					+sp(categories-genre-minus)
+					+r(1245)
+						+sp(categories-genre-minus-small)
+				span
+					color: $cl 
+			&:first-child
+				margin: 0
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			position: relative
+			top: -2px
+			margin-right: 15px 
+			+r(1245)	
+				top: 0
+		span
+			text-transform: uppercase
+			+roboto
+			color: #fff
+			font-size: 18px 
+			+r(1245)	
+				font-size: 14px
+	.categories__genre-movies
+		border-top: 8px solid #45c1ec
+		i
+			+s(categories-genre-movies)
+			+r(1245)
+				+s(categories-genre-movies-small)
+		&.is-active
+			i
+				+sp(categories-genre-movies-a)
+				+r(1245)
+					+sp(categories-genre-movies-a-small)
+	.categories__genre-tv
+		border-top: 8px solid #a7d53d
+		i
+			top: -4px
+			+s(categories-genre-tv)
+			+r(1245)
+				top: -2px
+				+s(categories-genre-tv-small)
+		&.is-active
+			i
+				+sp(categories-genre-tv-a)
+				+r(1245)
+					+sp(categories-genre-tv-a-small)
+	.categories__genre-music
+		border-top: 8px solid #f1c04c
+		i
+			+s(categories-genre-music)
+			+r(1245)
+				+s(categories-genre-music-small)
+		&.is-active
+			i
+				+sp(categories-genre-music-a)
+				+r(1245)
+					+sp(categories-genre-music-a-small)
+	.categories__genre-list
+		padding: 30px 40px
+		background: #FFF 
+		text-align: center
+		+clr
+		+r(1245)
+			padding: 20px 30px
+		ul
+			float: left
+			width: 30%
+			margin-left: 5%
+			&:first-child
+				margin: 0
+		li
+			border-top: 1px solid #e0e0e0
+			&:first-child
+				border: none
+		a
+			display: block
+			padding: 12px 0
+			+roboto
+			font-size: 16px
+			font-weight: 300 
+			color: #000 
+			+r(1245)
+				padding: 7px 0
+				font-size: 14px
+			&.is-active
+				font-weight: 400
+	.categories__genre-item
+		margin-top: 9px
+		border-radius: 5px
+		background: #fff  
+		&:first-child
+			margin: 0
+		.categories__genre-nav
+			button
+				width: 100%
+				height: 48px
+				background: #FFF
+				border-radius: 5px 
+				&:after	
+					margin-top: -8px
+					+s(categories-genre-plus-mob)
+				&.is-active
+					&:after
+						+s(categories-genre-minus-mob)
+				span
+					color: #000  
+		.categories__genre-movies
+			i
+				+s(categories-genre-movies-mob)
+		.categories__genre-tv
+			i
+				+s(categories-genre-tv-mob)
+		.categories__genre-music
+			i
+				+s(categories-genre-music-mob)
+		.categories__genre-list
+			position: relative
+			padding: 0 50px
+			background: none 
+			ul
+				width: 100%
+	.categories__genre-slider
+		position: relative
+	.categories__genre-dots
+		padding: 12px
+		text-align: center
+		font-size: 0
+		button
+			height: 6px
+			width: 6px
+			margin: 0 2px
+			background: #CCC
+			border-radius: 50%   
+			&.is-active
+				background: #000 
+	.categories__genre-slider-prev, .categories__genre-slider-next
+		position: absolute
+		top: 50%
+		margin-top: -10px
+	.categories__genre-slider-prev
+		left: 22px
+		+s(categories-genre-slider-prev)
+	.categories__genre-slider-next
+		right: 22px
+		+s(categories-genre-slider-next)
+	.categories__fav
+		overflow: hidden
+	.categories__fav-list
+		margin: 0 -4px -4px 0
+	.categories__fav-item
+		float: left
+		width: 33.33%
+	.categories__fav-el
+		position: relative
+		margin: 0 4px 4px 0
+		padding-bottom: 100%
+		overflow: hidden
+	.categories__fav-in
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		border-radius: 5px 
+		background: #682F75 
+	.categories__fav-share
+		position: absolute
+		bottom: 0
+		right: 0
+		bottom: 0 
+		padding: 0 40px 40px
+		+r(1245)
+			padding: 0 10px 10px
+		.categories__share
+			color: #fff 
+			+r(1245)
+				text-align: center
+		.categories__share-list
+			li
+				border-color: #fff
+			a
+				color: #fff 
+		.categories__share-title
+			+r(1245)
+				display: block
+				margin-bottom: 7px
+				font-size: 12px
+		.categories__cell_presented
+			+r(1245)
+				padding-left: 10px
+	.categories__fav-pic
+		img
+			display: block
+			width: 100%
+			border-radius: 5px 
+	.categories__fav-title
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 10px
+		background: #FFF
+		border-radius: 0 0 5px 5px
+		text-align: center  
+		font-size: 15px
+		text-transform: uppercase
+		line-height: 1
+		color: #000 
+	.categories__fav-type
+		padding: 140px 20px 0 55px
+		text-align: center
+		+r(1245)
+			padding: 100px 10px 0 35px
+		li
+			display: table-cell
+			vertical-align: top
+			+fb
+			font-size: 46px
+			color: #FFF
+			text-transform: uppercase
+			text-align: left
+			line-height: 1 
+			+r(1245)
+				font-size: 28px 
+			&:first-child
+				padding-right: 17px
+				+r(1245)
+					padding-right: 10px
+		img
+			+r(1245)
+				width: 24px
+	.categories__genre-sort
+		margin-bottom: 20px
+		text-align: center
+		font-size: 0
+		+r(1245)
+			margin-bottom: 15px
+		button
+			position: relative
+			margin: 0 8px
+			padding: 10px 20px
+			background: #ddd
+			border-radius: 5px 
+			+fb
+			font-size: 14px
+			color: #8D8D8D 
+			text-transform: uppercase
+			overflow: visible
+			+r(1245)
+				margin: 0 6px
+				padding: 5px 15px
+				font-size: 12px 
+			&.is-active
+				background: #45c1ec
+				color: #fff 
+				&:after
+					content: ""
+					position: absolute
+					bottom: -5px
+					left: 50%
+					margin-left: -5px
+					+arr(10,5,#45c1ec,b)
 
 .posts
 	padding: 40px 35px 35px
 	+r(1245)
-		padding: 25px 20px
-	+r(810)
 		padding: 25px 15px
 	.posts__head
 		margin-bottom: 35px
@@ -417,8 +894,6 @@ $cl: #572861
 		font-weight: 300 
 		font-size: 24px
 		text-transform: uppercase
-	.posts__title-logo
-		+s(posts-title)
 	.posts__grid
 		overflow: hidden
 	.posts__list
@@ -478,6 +953,7 @@ $cl: #572861
 	overflow: auto
 	+f
 	+vertical
+	text-align: center
 	.popup__in
 		position: relative
 		display: inline-block
@@ -544,10 +1020,6 @@ $cl: #572861
 	.popup__presented-title
 		margin-bottom: 15px
 		font-size: 12px
-	.popup__presented-logo
-		display: inline-block
-		+s(popup-presented)
-		vertical-align: top
 	.popup__enter
 		button
 			width: 330px
@@ -570,9 +1042,89 @@ $cl: #572861
 		z-index: 2 
 		+opacity(.8) 
 
+.vote-head
+	padding: 20px 35px
+	background: #FFF 
+	+clr
+	+r(1245)
+		padding: 20px
 
+.vote-account
+	float: left
+	font-size: 0
+	white-space: nowrap
+	.vote-account__ava, .vote-account__name, .vote-account__invite
+		display: inline-block
+		vertical-align: middle
+		font-size: 14px
+	.vote-account__ava
+		margin-right: 15px 
+		img
+			display: block
+			border-radius: 50% 
+		+r(1245)
+			float: left
+	.vote-account__name
+		margin-right: 25px
+		+r(1245)
+			display: block
+			margin: 0 0 5px
+			overflow: hidden
+	.vote-account__invite
+		padding: 9px 15px
+		background: #ddd
+		border-radius: 5px
+		text-transform: uppercase
+		+fb
+		color: #8b8b8b
+		+r(1245)
+			padding: 5px 15px
 
+.vote-friends
+	float: right
+	font-size: 0
+	.vote-friends__title, .vote-friends__list, .vote-friends__more
+		display: inline-block
+		vertical-align: middle
+	.vote-friends__title	
+		margin-right: 25px
+		font-size: 14px
+		+r(1245)
+			width: 120px
+			text-align: right
+	.vote-friends__list
+		margin-right: 8px
+		li
+			display: inline-block
+			margin-left: 5px
+			vertical-align: middle
+			&:first-child
+				margin: 0
+		img
+			display: block
+			border-radius: 50% 
+	.vote-friends__more
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		background: #ddd
+		+fb
+		font-size: 10px
+		text-transform: uppercase 
+		color: #8b8b8b 
 
+.tune-into
+	text-align: center
+	font-size: 16px
+	text-transform: uppercase
+	color: $cl 
+	img, span
+		display: inline-block
+		vertical-align: middle
+	span
+		padding: 5px
+		&:first-child
+			padding: 0
 
 
 
