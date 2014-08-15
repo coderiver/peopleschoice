@@ -143,6 +143,19 @@ $cl: #572861
 				margin: 0 6px
 				padding: 5px 15px
 				font-size: 12px 
+		.categories__status-title
+			font-size: 60px
+		.categories__thank	
+			margin: -16px 0 5px 
+		.categories__thank-share, .categories__thank-btns
+			width: auto
+			margin-left: 25px
+		.categories__thank-title
+			width: 100%
+			margin-bottom: 10px
+		.categories__thank-btns
+			button
+				width: 150px
 	.posts
 		padding: 25px 20px
 		.posts__text
@@ -279,6 +292,42 @@ $cl: #572861
 				font-size: 16px
 			img
 				width: 14px
+		.categories__status-title
+			font-size: 26px
+		.categories__status-text
+			font-size: 14px
+			img
+				display: block
+				position: relative
+				top: 0
+				max-width: 100%
+				margin: 10px auto 0
+		.categories__thank	
+			margin: -16px 0 -11px
+			padding: 10px
+		.categories__thank-title, .categories__thank-share, .categories__thank-btns
+			width: 100%
+			padding: 0
+			margin: 0
+		.categories__thank-title
+			margin-bottom: 12px
+			text-align: center
+			font-size: 15px
+			span
+				font-size: 26px
+		.categories__thank-share
+			margin-bottom: 10px
+			button
+				width: 140px
+				height: 46px
+			span
+				font-size: 11px
+				width: 50px
+		.categories__thank-btns
+			button
+				width: 140px
+				height: 62px
+				font-size: 16px
 		
 .awards
 	padding: 25px 30px
@@ -286,6 +335,8 @@ $cl: #572861
 	font-size: 0
 	+r(1245)
 		padding: 20px 15px
+		img
+			max-width: 100%
 	.awards__new
 		text-align: center
 		text-transform: uppercase
@@ -821,6 +872,130 @@ $cl: #572861
 					left: 50%
 					margin-left: -5px
 					+arr(10,5,#45c1ec,b)
+	.categories__status
+		padding: 25px
+	.categories__status-title
+		margin-bottom: 20px
+		+fb 
+		font-size: 84px
+		text-align: center
+		color: $cl
+		text-transform: uppercase
+		line-height: 1
+		+r(1245)
+			font-size: 60px
+	.categories__status-icons
+		max-width: 1000px
+		margin: 0 auto 30px
+		text-align: center
+		font-size: 0
+		overflow: hidden
+		ul, li
+			display: inline-block
+			vertical-align: middle
+		ul
+			position: relative
+			&:before, &:after
+				content: ""
+				position: absolute
+				top: 20px
+				width: 500px
+				height: 1px
+				background: #b6a4b8 
+			&:before
+				left: 110%
+			&:after
+				right: 110%
+		li
+			margin: 0 10px 
+	.categories__status-video
+		+s(categories-status-video)
+	.categories__status-tv
+		+s(categories-status-tv)
+	.categories__status-music
+		+s(categories-status-music)
+	.categories__status-text
+		max-width: 800px
+		margin: 0 auto
+		font-size: 30px
+		color: $cl
+		text-align: center 
+		img
+			position: relative
+			top: 2px
+	.categories__thank	
+		margin: -36px 0 -20px
+		padding: 25px 0
+		border-radius: 6px
+		background: rgba(0,0,0,.14) 
+		font-size: 0
+		+r(1245)
+			margin: -16px 0 5px 
+	.categories__thank-title, .categories__thank-share, .categories__thank-btns
+		display: inline-block
+		width: 33.33%
+		box-sizing: border-box
+		vertical-align: middle 
+	.categories__thank-share, .categories__thank-btns
+		+r(1245)
+			width: auto
+			margin-left: 25px
+	.categories__thank-title
+		font-size: 18px
+		padding: 0 0 0 25px
+		+r(1245)
+			width: 100%
+			margin-bottom: 10px
+		span
+			display: block
+			line-height: 1.2
+			+fb
+			font-size: 32px
+			color: $cl 
+	.categories__thank-share
+		text-align: center
+		font-size: 0
+		button
+			width: 175px
+			height: 52px
+			background: #FFF
+			border-radius: 6px 
+			text-align: left
+			&:first-child
+				margin-right: 6px 
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			width: 34px
+			height: 21px
+			margin-right: 10px
+			border-right: 1px solid $cl
+			text-align: center
+			font-size: 15px
+			line-height: 21px
+		span
+			font-size: 13px  
+			color: $cl 
+	.categories__thank-btns
+		text-align: center
+		font-size: 0
+		button
+			width: 175px
+			height: 52px
+			background-color: $cl 
+			+background-image(linear-gradient(bottom, #572761 0%, #6b2f79 100%))
+			border-radius: 6px 
+			+fb
+			font-size: 18px  
+			color: #fff
+			+r(1245)
+				width: 150px
+			&:first-child
+				margin-right: 6px 
+			&:hover
+				background: $cl
+				box-shadow: inset 4px 7px 16px rgba(0, 0, 0, 0.25) 
 
 .posts
 	padding: 40px 35px 35px
